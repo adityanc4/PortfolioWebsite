@@ -750,14 +750,17 @@
                 
                 if (response.status === 200) {
                     form.reset();
+                    successMsg.innerText = result.message || "Thank you for your message. I will respond to your inquiry shortly.";
                     successMsg.classList.remove('hidden');
                     setTimeout(() => { successMsg.classList.add('hidden'); }, 5000);
                 } else {
-                    console.log(response);
+                    console.log(result);
+                    errorMsg.innerText = "Error: " + (result.message || "Invalid setup. Check console.");
                     errorMsg.classList.remove('hidden');
                 }
             } catch (error) {
                 console.log(error);
+                errorMsg.innerText = "Network Error: Browser blocked the request. Test this on your live GitHub Pages link or disable Adblockers.";
                 errorMsg.classList.remove('hidden');
             } finally {
                 btn.innerText = originalText;
