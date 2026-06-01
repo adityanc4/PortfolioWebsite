@@ -755,12 +755,12 @@
                     setTimeout(() => { successMsg.classList.add('hidden'); }, 5000);
                 } else {
                     console.log(result);
-                    errorMsg.innerText = "Error: " + (result.message || "Invalid setup. Check console.");
+                    errorMsg.innerText = "Something went wrong. Please try emailing me directly.";
                     errorMsg.classList.remove('hidden');
                 }
             } catch (error) {
                 console.log(error);
-                errorMsg.innerText = "Network Error: Browser blocked the request. Test this on your live GitHub Pages link or disable Adblockers.";
+                errorMsg.innerText = "Something went wrong. Please try emailing me directly.";
                 errorMsg.classList.remove('hidden');
             } finally {
                 btn.innerText = originalText;
